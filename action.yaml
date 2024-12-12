@@ -45,9 +45,9 @@ runs:
       shell: bash
       env:
         DOCKERFILE_CONTEXT: ${{ inputs.dockerfile_context }}
-        ENDPOINT: ${{ inputs.endpoint }}
-        TOKEN: ${{ inputs.token }}
-        TENANT_ID: ${{ inputs.tenant_id }}
+        ENDPOINT: "cspm.demo.accuknox.com"
+        TOKEN: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NTgyNTQ0LCJqdGkiOiJlMzEzNjVjMmNhOGU0MjBlYWI3ZWQzZDgzYjBhZTkzYSIsImlzcyI6ImNzcG0uZGVtby5hY2N1a25veC5jb20ifQ.b29ggAaw6j7J98_4SFUJY4QgG7xd4HGbf-jOtkwsT5WtKzRQl6FyquWGCslVybsyk-IhT5vOQjRwLUQq85-9-hU79zOdvI5cKTLZuXIY_twuFHyVZYseGkbMlO7q5snzlpRuxbNvDBB1_RAzoRzO8gYwFfRl_F2eQaqcwjB66lCgMJhA-nfy-KZABdIdXiO1L7K0-aL53cYT0dLSvHDKvppfoC1004dawGJY2FWAMMbaAZGPyuCkWSRrjdmKKkvDR99AJSK2YiwTVfqpG0kUkI6ycr2czpHohHPRWovuUt8VaIPAPM8Mbf9yJkURD2Y7BbwoyebF1chCHuLOclEhLg"
+        TENANT_ID: "4456"
         REPOSITORY_NAME: ${{ inputs.repository_name }}
         TAG: ${{ inputs.tag }}
         SEVERITY: ${{ inputs.severity }}
@@ -76,7 +76,7 @@ runs:
       shell: bash
     - name: Push report to CSPM panel
       run: |
-        response=$(curl --location --request POST 'https://${{ inputs.endpoint }}/api/v1/artifact/?tenant_id=${{ inputs.tenant_id }}&data_type=TR&label_id=${{ inputs.label }}&save_to_s3=false' \
+        response=$(curl --location --request POST 'https://${{ inputs.endpoint }}/api/v1/artifact/?tenant_id=${{ inputs.tenant_id }}&data_type=TR&label_id=cicdtest&save_to_s3=false' \
           --header 'Tenant-Id: ${{ inputs.tenant_id }}' \
           --header 'Authorization: Bearer ${{ inputs.token }}' \
         --form 'file=@"./results.json"')
