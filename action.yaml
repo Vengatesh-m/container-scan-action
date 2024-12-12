@@ -1,5 +1,5 @@
 name: AccuKnox Container Scan
-description: Scan Docker images using AccuKnox and push the results to the CSPM panel.
+description: Scan Docker images using AccuKnox and push the results to the CSPM panel..
 
 inputs:
   dockerfile_context:
