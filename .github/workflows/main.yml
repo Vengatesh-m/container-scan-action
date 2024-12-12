@@ -18,7 +18,7 @@ jobs:
       - name: Run AccuKnox CSPM Scan
         uses: accuknox/container-scan-action@v0.0.1
         with:
-          token: ${{ secrets.TOKEN }}
-          tenant_id: ${{ secrets.TENANT_ID }}
+          token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NTgyNTQ0LCJqdGkiOiJlMzEzNjVjMmNhOGU0MjBlYWI3ZWQzZDgzYjBhZTkzYSIsImlzcyI6ImNzcG0uZGVtby5hY2N1a25veC5jb20ifQ.b29ggAaw6j7J98_4SFUJY4QgG7xd4HGbf-jOtkwsT5WtKzRQl6FyquWGCslVybsyk-IhT5vOQjRwLUQq85-9-hU79zOdvI5cKTLZuXIY_twuFHyVZYseGkbMlO7q5snzlpRuxbNvDBB1_RAzoRzO8gYwFfRl_F2eQaqcwjB66lCgMJhA-nfy-KZABdIdXiO1L7K0-aL53cYT0dLSvHDKvppfoC1004dawGJY2FWAMMbaAZGPyuCkWSRrjdmKKkvDR99AJSK2YiwTVfqpG0kUkI6ycr2czpHohHPRWovuUt8VaIPAPM8Mbf9yJkURD2Y7BbwoyebF1chCHuLOclEhLg
+          tenant_id: 4456
           repository_name: ${{ github.repository }}
-          label: ${{ secrets.LABEL }}
+          label: cicdtest
